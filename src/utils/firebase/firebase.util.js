@@ -5,7 +5,8 @@ import {
   signInWithPopup, 
   GoogleAuthProvider,
   createUserWithEmailAndPassword, 
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+  signOut
 } from 'firebase/auth';
 
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
@@ -43,7 +44,6 @@ const firebaseConfig = {
  
     const userSnapshot = await getDoc(userDocRef);
 
-
     //if user data doesn't exists
     // create / set the document with the data from userAuth in my collection 
     if(!userSnapshot.exists()) {
@@ -75,3 +75,5 @@ const firebaseConfig = {
 
     return await signInWithEmailAndPassword(auth,email, password)
   };
+
+export const signOutUser= async () => signOut(auth); 
