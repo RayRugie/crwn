@@ -10,6 +10,7 @@
     top: 90px;
     right: 40px;
     z-index: 5;
+    
   
     .empty-message {
       font-size: 18px;
@@ -20,8 +21,15 @@
       height: 240px;
       display: flex;
       flex-direction: column;
-      overflow: scroll;
+      overflow-y: scroll;
+      scrollbar-width: thin;
+
     }
+
+    // .cart-items::-webkit-scrollbar {
+    //   width: 0;
+    //   background: transparent;
+    // }
   
     button {
       margin-top: auto;
